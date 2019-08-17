@@ -6,6 +6,7 @@ import Login from './Login'
 import About from './About'
 import Sidebar from './components/Sidebar'
 import Home1 from './components/Home1'
+import Login1 from './Login1'
 
 class App extends Component {
   constructor(props){
@@ -33,7 +34,8 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        {this.state.user ? (<Home1/>):(<Login/>)}
+        {/* {this.state.user ? (<Home1/>):(<Login/>)}  */}
+        <Home1/>
       </div>
     );
   }

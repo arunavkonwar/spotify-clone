@@ -22,11 +22,11 @@ class Navigation extends Component {
       return(
         <div className="nav-main">
         <ul>
-          <li><NavLink to="/featured">Featured</NavLink></li>
-          <li><NavLink to="/podcasts">Podcasts</NavLink></li>
-          <li><NavLink to="/genresandmood">Genres & Moods</NavLink></li>
-          <li><NavLink to="/newreleases">New Releases</NavLink></li>
-          <li><NavLink to="/discover">Discover</NavLink></li>
+          <li><NavLink to="/featured">FEATURED</NavLink></li>
+          <li><NavLink to="/podcasts">PODCASTS</NavLink></li>
+          <li><NavLink to="/genresandmood">GENRES & MOODS</NavLink></li>
+          <li><NavLink to="/newreleases">NEW RELEASES</NavLink></li>
+          <li><NavLink to="/discover">DISCOVER</NavLink></li>
           <li className="logout-button"><NavLink to="/"><div onClick={this.logout}>Logout</div></NavLink></li>
           </ul>
         </div>

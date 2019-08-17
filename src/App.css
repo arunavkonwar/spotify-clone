@@ -27,7 +27,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /** overflow: hidden; **/
   background-color: #333;
 }
 
@@ -37,7 +37,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color:  #bdbdbd;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -49,9 +49,9 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: rgb(180, 170, 170);
+  /**background-color: rgb(180, 170, 170);**/
   text-decoration: none;
-  color: white;
+  color: #f1f1f1;
 }
 
 .button {
@@ -85,16 +85,22 @@ li a:hover {
   padding-top: 20px;
 }
 
+
 .sidenav a {
-  padding: 6px 8px 6px 16px;
+  padding: 6px 8px 6px 0px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 17.5px;
+  color: #9FA0A1;
   display: block;
+  margin-left: 0%;
 }
 
 .sidenav a:hover {
   color: #f1f1f1;
+}
+
+.sidenav img {
+  margin-left: 10%;
 }
 
 .main {
@@ -144,7 +150,7 @@ li a:hover {
 }
 .nav-main {
   float: right;
-  width: 80%
+  width: 80%;
 }
 
 .main-panel {
@@ -157,7 +163,41 @@ li a:hover {
   background-color: #05050C;
   overflow-x: hidden;
   padding-top: 20px;
-  background-image: linear-gradient(-45deg,#000, #3D321D);
+  background-image: linear-gradient(-45deg,#000, #00507D);
+}
+
+.song-list {
+  height: 76%;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  color: white;
+  /**background-image: linear-gradient(-45deg,#000, rgb(221, 11, 211)); **/
+}
+
+.one-song {
+  padding: 16px 8px 16px 0px;
+  text-decoration: none;
+  font-size: 17.5px;
+  color: rgb(255, 255, 255);
+  display: block;
+  margin-left: 0%;
+  
+}
+
+.one-song:hover {
+  padding: 16px 8px 16px 0px;
+  text-decoration: none;
+  font-size: 17.5px;
+  color: rgb(255, 255, 255);
+  margin-left: 0%;
+  background-color: #000000;
+  opacity: 0.6;
+
 }
 
 /* Bottom playbar*/
@@ -168,6 +208,11 @@ li a:hover {
   bottom: 0;
   height: 14%;
   width: 100%;
+}
+
+.audioPlayer {
+  padding: 20px 20px 10px 20px;
+  float: center;
 }
 
 .btn {

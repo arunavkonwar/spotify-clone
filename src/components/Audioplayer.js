@@ -2,17 +2,17 @@ import { NavLink } from 'react-router-dom';
 import React, { Component} from 'react';
 import '../App.css';
 import ReactAudioPlayer from 'react-audio-player';
+import SongList from './SongList';
 
 class Audioplayer extends Component {
-
   render(){
+    //test-audio/RainyZurich.mp3
       return(
-        <div className="playbar">
-            <button class="btn warning">Warning</button>
+        <div className="audioPlayer">
             <ReactAudioPlayer
-            src="munich.ogg"
-            autoPlay
+            src={this.props.src}
             controls
+            autoPlay
             />
         </div>
       );

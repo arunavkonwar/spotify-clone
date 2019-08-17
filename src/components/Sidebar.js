@@ -19,7 +19,9 @@ class Sidebar extends Component {
   }
   render(){
       return(
-        <div class="sidenav">
+        <div className="sidenav">
+          <img src="images/spotify-logo.png" width="60%" align="left"></img>
+          <br></br><br></br>
           <a href="#home">Home</a>
           <a href="#search">Search</a>
           <a href="#library">Your Library</a>
