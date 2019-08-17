@@ -26,4 +26,4 @@ yarn-error.log*
 /src/config/fire.js
 
 #audio folder
-/test-audio
+public/test-audio
