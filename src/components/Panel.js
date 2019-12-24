@@ -4,6 +4,8 @@ import '../App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
 import SongList from './SongList'
+import Searchpanel from './Searchpanel'
+import Library from './Library';
 
 
 class Panel extends Component {
@@ -34,7 +36,9 @@ class Panel extends Component {
       return(
         <div className="main-panel">
         <Navigation/>
-        <SongList action={this.props.action}/>
+        {this.props.focuspanel.songs && <SongList action={this.props.action}/>}
+        {this.props.focuspanel.search && <Searchpanel/>}
+        {this.props.focuspanel.library && <Library/>}
         </div>
       );
   }

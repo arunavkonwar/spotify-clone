@@ -210,6 +210,24 @@ li a:hover {
   width: 100%;
 }
 
+.songNameHeading {
+  color: white;
+}
+
+.songNameTitle {
+  color: rgb(223, 203, 203);
+  animation: right_to_left 3s ease;
+}
+
+@keyframes right_to_left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
 .audioPlayer {
   padding: 20px 20px 10px 20px;
   float: center;

@@ -33,7 +33,7 @@ class SongList extends Component {
   }
 
   render(){
-    var songs1={"Munich":"munich.mp3","Rainy Zurich":"rainyZurich.mp3","Take It Easy":"takeItEasy.mp3"}
+    var songs1={"Munich":"munich.mp3","Rainy Zurich":"rainyzurich.mp3","Take It Easy":"takeiteasy.mp3"}
     var elements=[]
     /*
 

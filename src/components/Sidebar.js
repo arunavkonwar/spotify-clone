@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import '../App.css';
 import fire from '../config/fire';
-
-
+import SongName from './SongName';
+import Sidebutton from './Sidebutton';
 
 class Sidebar extends Component {
   constructor(props){
@@ -10,21 +10,22 @@ class Sidebar extends Component {
       this.logout=this.logout.bind(this)
   }
 
-  componentDidMount(){
-      
-  }
-
   logout() {
       fire.auth().signOut();
   }
+
   render(){
+
       return(
         <div className="sidenav">
           <img src="images/spotify-logo.png" width="60%" align="left"></img>
           <br></br><br></br>
-          <a href="#home">Home</a>
-          <a href="#search">Search</a>
-          <a href="#library">Your Library</a>
+          <Sidebutton linkname="Home" mapname="songs" focus={this.props.focus}/>
+          <Sidebutton linkname="Search" mapname="search" focus={this.props.focus}/>
+          <Sidebutton linkname="Your Library" mapname="library" focus={this.props.focus}/>
+          <div>
+            <SongName src1={(this.props.src)}/>
+          </div>
         </div>
       );
   }

@@ -1,12 +1,5 @@
-import { NavLink } from 'react-router-dom'; 
 import React, { Component} from 'react';
 import '../App.css';
-import Navigation from './Navigation';
-import axios from 'axios';
-import Audioplayer from './Audioplayer';
-import SongList from './SongList';
-import Home1 from './Home1'
-
 
 class Song extends Component {
 
