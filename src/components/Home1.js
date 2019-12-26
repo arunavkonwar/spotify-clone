@@ -2,12 +2,9 @@ import React, { Component} from 'react';
 import '../App.css';
 import fire from '../config/fire';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Weather from './Weather'
-import Contact from './Contact'
 import Sidebar from './Sidebar'
 import Panel from './Panel'
 import Playbar from './Playbar';
-import SongList from './SongList'
 ///test-audio/Munich.mp3
 
 class Home1 extends Component {

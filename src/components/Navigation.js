@@ -16,7 +16,11 @@ class Navigation extends Component {
   }
 
   logout() {
-      fire.auth().signOut();
+      fire.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
   }
   render(){
       return(

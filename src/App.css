@@ -234,8 +234,8 @@ li a:hover {
 }
 
 .btn {
-  border: none; /* Remove borders */
-  color: white; /* Add a text color */
+  border: 2px; /* Remove borders */
+  color: black; /* Add a text color */
   padding: 14px 28px; /* Add some padding */
   cursor: pointer; /* Add a pointer cursor on mouse-over */
 }
