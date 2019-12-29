@@ -33,7 +33,20 @@ class SongList extends Component {
   }
 
   render(){
-    var songs1={"Munich":"munich.mp3","Rainy Zurich":"rainyzurich.mp3","Take It Easy":"takeiteasy.mp3"}
+    var songs1 = {
+      "Munich": {
+        'file': "munich.mp3",
+        'band': "The Fray",
+      },
+      "Rainy Zurich": {
+        'file': "rainyzurich.mp3",
+        'band': "The Fray",
+      },
+      "Take It Easy": {
+        'file': "takeiteasy.mp3",
+        'band': "The Eagles",
+      }
+    };
     var elements=[]
     /*
 
@@ -44,7 +57,7 @@ class SongList extends Component {
 
     for (var key in songs1) {
       console.log(key, songs1[key])
-      elements.push(<Song songName={key} src={songs1[key]} action={this.props.action}/>)
+      elements.push(<Song songName={key} src={songs1[key]['file']} band={songs1[key]['band']} action={this.props.action}/>)
       }
 
     return(

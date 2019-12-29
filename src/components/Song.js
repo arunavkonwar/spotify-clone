@@ -19,7 +19,8 @@ class Song extends Component {
 
       return(
         <div className="one-song">
-        <a onClick={() => this.props.action(`/test-audio/${this.props.src}`)}>{this.props.songName }</a>
+        <a onClick={() => this.props.action(`/test-audio/${this.props.src}`)}>{this.props.songName }</a><br></br>
+        <h6><a>{this.props.band}</a></h6>
         </div>
       );
   }

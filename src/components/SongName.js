@@ -13,7 +13,8 @@ class SongName extends Component {
         <div className="songNameHeading">Now Playing
         </div>
         <div className="songNameTitle">
-            {this.props.src1}
+            {this.props.src} <br></br>
+            <h6>{this.props.src}</h6>
         </div>
         </div>
       );
