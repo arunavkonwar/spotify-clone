@@ -24,7 +24,7 @@ class Sidebar extends Component {
           <Sidebutton linkname="Search" mapname="search" focus={this.props.focus}/>
           <Sidebutton linkname="Your Library" mapname="library" focus={this.props.focus}/>
           <div>
-            <SongName src={(this.props.src)}/>
+            <SongName src={(this.props.src)} band={this.props.band}/>
           </div>
         </div>
       );

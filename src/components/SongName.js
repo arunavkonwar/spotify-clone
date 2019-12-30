@@ -14,7 +14,7 @@ class SongName extends Component {
         </div>
         <div className="songNameTitle">
             {this.props.src} <br></br>
-            <h6>{this.props.src}</h6>
+            <h6>{this.props.band}</h6>
         </div>
         </div>
       );

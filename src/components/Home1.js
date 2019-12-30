@@ -69,12 +69,30 @@ class Home1 extends Component {
 
 
     var reverseLookup =(filename)=>{
-      var songs1={"Munich":"munich.mp3","Rainy Zurich":"rainyzurich.mp3","Take It Easy":"takeiteasy.mp3"}
+      var songs1 = {
+        "Munich": {
+          'file': "munich.mp3",
+          'band': "The Fray",
+        },
+        "Rainy Zurich": {
+          'file': "rainyzurich.mp3",
+          'band': "The Fray",
+        },
+        "Take It Easy": {
+          'file': "takeiteasy.mp3",
+          'band': "The Eagles",
+        }
+      };
+
+
       var finalname = filename.replace(/^.*[\\\/]/, '')
       var finalname1 = finalname.toLowerCase()
       for(var key in songs1){
-        if (songs1[key]===finalname1){
-          return key;
+        if (songs1[key]['file']===finalname1){
+          var ans=[]
+          ans.push(key)
+          ans.push(songs1[key]['band'])
+          return ans;
         }
       }
     }
@@ -85,7 +103,7 @@ class Home1 extends Component {
         <div className="wrapper">
           <Panel action={this.handler} focuspanel={this.state.focus}/>
 
-          <Sidebar src={temp1} focus={this.changefocus}/>
+          <Sidebar src={temp1[0]} band={temp1[1]} focus={this.changefocus}/>
           
           <Playbar src={this.state.src}/>
         </div>
