@@ -44,6 +44,7 @@ class Home1 extends Component {
       search: false,
       library: false,
     }
+    
     for (var key in panelmapping){
       if (key===e){
         panelmapping[key]=true
