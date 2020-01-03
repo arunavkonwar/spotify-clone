@@ -73,10 +73,13 @@ class Searchpanel extends Component {
   render(){
     var elements=[]
     return(
-        <div className="song-list"> 
-          <h1>THIS IS THE SEARCH PANEL</h1>
-          <input type="email" value={this.state.email} class="form-control" name="searchTerm" placeholder="Search for your band" onChange={this.searchLookup}></input><br></br>
-          {this.state.elements}
+        <div>
+          <div class="filter-bar">
+            <input type="email" value={this.state.email} class="form-control" name="searchTerm" placeholder="Search for your band" onChange={this.searchLookup}></input><br></br>
+          </div>
+          <div className="song-list">
+            {this.state.elements}
+          </div>
         </div>
       );
   }
