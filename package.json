@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^5.10.0",
+    "jquery": "^3.4.1",
     "passport": "^0.4.1",
     "passport-spotify": "^1.1.0",
     "react": "^16.8.6",

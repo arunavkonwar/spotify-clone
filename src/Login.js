@@ -2,8 +2,8 @@ import React, { Component} from 'react';
 import './App.css';
 import fire from './config/fire';
 import firebase from 'firebase';
-import passport from 'passport'
-import SpotifyStrategy from 'passport-spotify'
+import { authEndpoint, clientId, redirectUri, scopes } from "./config/config";
+import hash from "./hash";
 
 class Login extends Component {
     constructor(props){
@@ -14,10 +14,21 @@ class Login extends Component {
         this.googleOAuth = this.googleOAuth.bind(this);
         this.spotifyOAuth = this.spotifyOAuth.bind(this)
         this.state = {
-            email:'',
-            password:''
-        }
+            token: null,
+            item: {
+              album: {
+                images: [{ url: "" }]
+              },
+              name: "",
+              artists: [{ name: "" }],
+              duration_ms:0,
+            },
+            is_playing: "Paused",
+            progress_ms: 0
+          };
     }
+
+ 
 
     login(e){
         e.preventDefault();
@@ -58,26 +69,6 @@ class Login extends Component {
           });
     }
 
-       
-    spotifyOAuth(e){
-        e.preventDefault();
-        const client_id ='298360b3a2484cc4b77dc2bbfe6a1519'
-        const client_secret = '90a528e7bd6343968d1007da7b625087'
-        passport.use(
-          new SpotifyStrategy(
-            {
-              clientID: client_id,
-              clientSecret: client_secret,
-              callbackURL: 'http://localhost:3000/'
-            },
-            function(accessToken, refreshToken, expires_in, profile, done) {
-              console.log(refreshToken)
-            }
-          )
-        );
-    }
-
-
     handleChange(e){
         this.setState({[e.target.name]: e.target.value});
     }
@@ -93,7 +84,18 @@ class Login extends Component {
                 <input type="password" value={this.state.password} class="form-control" name="password" placeholder="Enter password" onChange={this.handleChange}></input><br></br>
                 <button type="submit" class="btn btn-default" onClick={this.login}>Login</button>
                 <button type="submit" class="btn btn-default" onClick={this.signup}>Sign Up</button>
-                <button type="submit" class="btn btn-default" onClick={this.googleOAuth}>Sign-in with Google</button>
+                <button type="submit" class="btn btn-default" onClick={this.spotifyOAuth}>Sign-in with Google</button>
+
+                {!this.state.token && (
+                    <a
+                    className="btn btn--loginApp-link"
+                    href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+                    "%20"
+                    )}&response_type=token&show_dialog=true`}
+                    >
+                    Login to Spotify
+                    </a>
+                )}
                 </div> 
                 </form>
             </div>
