@@ -1,8 +1,6 @@
 import React, { Component} from 'react';
 import '../App.css';
 import Audioplayer from './Audioplayer'
-import SongName from './SongName';
-import Song from './Song'
 
 
 class Playbar extends Component {

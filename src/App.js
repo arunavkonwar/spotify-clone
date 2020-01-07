@@ -1,11 +1,10 @@
 import React, { Component} from 'react';
 import './App.css';
 import fire from './config/fire';
-import Home from './Home'
 import Login from './Login'
-import About from './About'
 import Home1 from './components/Home1'
-import Login1 from './Login1'
+import passport from 'passport'
+import SpotifyStrategy from 'passport-spotify'
 
 class App extends Component {
   constructor(props){
@@ -16,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.authListener();
+    //this.authListener();
   }
 
   authListener(){
@@ -33,8 +32,7 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        {this.state.user ? (<Home1/>):(<Login/>)}  
-        
+        {this.state.user ? (<Home1/>):(<Login/>)}          
       </div>
     );
   }

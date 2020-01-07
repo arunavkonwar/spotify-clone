@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import '../App.css';
 import fire from '../config/fire';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Sidebar from './Sidebar'
 import Panel from './Panel'
 import Playbar from './Playbar';
@@ -62,7 +62,6 @@ class Home1 extends Component {
 
     function handler(e) {
       e.preventDefault();
-      console.log('hanDLER FUCK')
       this.setState({
         src: this.state.e,
       });

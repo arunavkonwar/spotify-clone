@@ -3,9 +3,6 @@ import '../App.css';
 
 
 class Sidebutton extends Component {
-  constructor(props){
-      super(props);
-  }
 
   render(){
     /** Solved using this 

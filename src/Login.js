@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import './App.css';
 import fire from './config/fire';
 import firebase from 'firebase';
+import passport from 'passport'
+import SpotifyStrategy from 'passport-spotify'
 
 class Login extends Component {
     constructor(props){
@@ -10,6 +12,7 @@ class Login extends Component {
         this.signup = this.signup.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.googleOAuth = this.googleOAuth.bind(this);
+        this.spotifyOAuth = this.spotifyOAuth.bind(this)
         this.state = {
             email:'',
             password:''
@@ -54,6 +57,26 @@ class Login extends Component {
             // ...
           });
     }
+
+       
+    spotifyOAuth(e){
+        e.preventDefault();
+        const client_id ='298360b3a2484cc4b77dc2bbfe6a1519'
+        const client_secret = '90a528e7bd6343968d1007da7b625087'
+        passport.use(
+          new SpotifyStrategy(
+            {
+              clientID: client_id,
+              clientSecret: client_secret,
+              callbackURL: 'http://localhost:3000/'
+            },
+            function(accessToken, refreshToken, expires_in, profile, done) {
+              console.log(refreshToken)
+            }
+          )
+        );
+    }
+
 
     handleChange(e){
         this.setState({[e.target.name]: e.target.value});
