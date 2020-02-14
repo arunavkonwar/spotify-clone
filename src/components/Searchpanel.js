@@ -24,8 +24,8 @@ class Searchpanel extends Component {
   }
 
   searchLookup = (e) => {
-    var searchResults=[]
-    var ans1=this.state.elementsRaw
+    var searchResults = []
+    var ans1 = this.state.elementsRaw
     e.preventDefault();
     //string.includes(substring)
     //console.log(ans1)
@@ -46,7 +46,7 @@ class Searchpanel extends Component {
     var elements=[]
     var ans={}
     // run json-server to get DATA from the link below
-    axios.get('http://localhost:3000/albums')
+    axios.get('http://localhost:3000/songs')
     .then((response) => {
       //console.log(response.data)
       //this.setState({songs:response.data})
@@ -54,7 +54,7 @@ class Searchpanel extends Component {
 
       for (var key in ans) {
         //console.log(key, ans[key])
-        elements.push(<Song songName={ans[key]["title"]} src={ans[key]["title"]} band={ans[key]['title']} action={this.props.action}/>)
+        elements.push(<Song songName={ans[key]["title"]} artist={ans[key]["artist"]} album={ans[key]["album"]} action={this.props.action}/>)
       }
 
       this.setState({

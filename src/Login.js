@@ -12,7 +12,7 @@ class Login extends Component {
         this.signup = this.signup.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.googleOAuth = this.googleOAuth.bind(this);
-        this.spotifyOAuth = this.spotifyOAuth.bind(this)
+        //this.spotifyOAuth = this.spotifyOAuth.bind(this)
         this.state = {
             token: null,
             item: {
@@ -83,18 +83,17 @@ class Login extends Component {
                 <input type="email" value={this.state.email} class="form-control" name="email" placeholder="Enter email" onChange={this.handleChange}></input><br></br>
                 <input type="password" value={this.state.password} class="form-control" name="password" placeholder="Enter password" onChange={this.handleChange}></input><br></br>
                 <button type="submit" class="btn btn-default" onClick={this.login}>Login</button>
-                <button type="submit" class="btn btn-default" onClick={this.signup}>Sign Up</button>
-                <button type="submit" class="btn btn-default" onClick={this.spotifyOAuth}>Sign-in with Google</button>
+                <button type="submit" class="btn btn-default" onClick={this.googleOAuth}>Sign-in with Google</button>
 
                 {!this.state.token && (
-                    <a
-                    className="btn btn--loginApp-link"
-                    href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+                <a
+                className="btn btn--loginApp-link"
+                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
                     "%20"
-                    )}&response_type=token&show_dialog=true`}
-                    >
-                    Login to Spotify
-                    </a>
+                )}&response_type=token&show_dialog=true`}
+                >
+                Login to Spotify
+                </a>
                 )}
                 </div> 
                 </form>

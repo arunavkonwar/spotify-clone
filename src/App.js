@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: {},
+      user: null,
       token: null,
       item: {
         album: {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.authListener();
+    //this.authListener();
     // Set token
     let _token = hash.access_token;
 
@@ -77,7 +77,7 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        {this.state.user ? (<Home1/>):(<Login/>)}
+        {this.state.user ? (<Home1/>):(<Home1/>)}
         {this.state.token && (
             <Player
               item={this.state.item}
