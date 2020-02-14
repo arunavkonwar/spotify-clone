@@ -12,6 +12,7 @@ class Searchpanel extends Component {
     this.state = {
       src:'test-audio/Munich.mp3',
       elements: null,
+      elementsRaw: null,
       searchterm:'',
     };
 
@@ -29,12 +30,12 @@ class Searchpanel extends Component {
 
     for (var key in ans1) {
       if (ans1[key]["title"].includes(e.target.value)){
-        searchResults.push(<Song songName={ans1[key]["title"]} src={ans1[key]["title"]} band={ans1[key]['title']} action={this.props.action}/>)
+        searchResults.push(<Song title={ans1[key]["title"]} album={ans1[key]["album"]} artist={ans1[key]['artist']} action={this.props.action}/>)
       } 
     }
 
     this.setState({
-      elements: searchResults,
+      elements: searchResults
     });
 
   };
@@ -44,12 +45,12 @@ class Searchpanel extends Component {
     var elements=[]
 
     for (var key in this.props.rawData) {
-      //console.log(key, ans[key])
-      elements.push(<Song songName={this.props.rawData[key]["title"]} artist={this.props.rawData[key]["artist"]} album={this.props.rawData[key]["album"]} action={this.props.action}/>)
+      elements.push(<Song title={this.props.rawData[key]["title"]} artist={this.props.rawData[key]["artist"]} album={this.props.rawData[key]["album"]} action={this.props.action}/>)
     }
 
     this.setState({
-      elements: elements
+      elements: elements,
+      elementsRaw: this.props.rawData
     });
   }
 

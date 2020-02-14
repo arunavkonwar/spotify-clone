@@ -19,7 +19,7 @@ class Song extends Component {
 
       return(
         <div className="one-song">
-        <a onClick={() => this.props.action(`/test-audio/${this.props.artist}`)}>{this.props.songName }</a><br></br>
+        <a onClick={() => this.props.action(`/test-audio/${this.props.artist}`)}>{this.props.title}</a><br></br>
         <h6><a>{this.props.artist}</a>   |   <a>{this.props.album}</a></h6> 
         </div>
       );
