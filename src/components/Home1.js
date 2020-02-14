@@ -5,15 +5,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Sidebar from './Sidebar'
 import Panel from './Panel'
 import Playbar from './Playbar';
+import axios from 'axios';
 ///test-audio/Munich.mp3
 
 class Home1 extends Component {
   constructor(props){
       super(props);
       //this.logout=this.logout.bind(this)
-
-      this.handler=this.handler.bind(this)
-      this.changefocus=this.changefocus.bind(this)
+      //this.handler=this.handler.bind(this)
+      //this.changefocus=this.changefocus.bind(this)
 
       this.state = {
         src:'test-audio/Munich.mp3',
@@ -22,6 +22,7 @@ class Home1 extends Component {
           search: false,
           library: false,
         },
+        rawData: null,
       };
   }
 
@@ -30,14 +31,14 @@ class Home1 extends Component {
       fire.auth().signOut();
   }
 
-  handler =(e) =>{
+  handler = (e) =>{
     console.log(`The ${e} link was clicked.`);
     this.setState({
       src: e, 
     });
   }
 
-  changefocus =(e) =>{
+  changefocus = (e) => {
     console.log(`The ${e} link was FOCUSED.`);
     const panelmapping = {
       songs: true,
@@ -56,6 +57,17 @@ class Home1 extends Component {
     this.setState({
       focus: panelmapping, 
     });
+  }
+
+  componentDidMount(){
+    console.log("LOLOLDSJKJDBFKSDFJ")
+    axios.get('http://localhost:3000/songs')
+    .then((response) => {
+      console.log(response.data)
+      this.setState({
+        rawData: response.data
+      })
+    });     
   }
 
   render(){
@@ -97,14 +109,12 @@ class Home1 extends Component {
       }
     }
 
-    var temp1=reverseLookup(this.state.src)
+    var temp1 = reverseLookup(this.state.src)
       return(
         <Router>
         <div className="wrapper">
           <Panel action={this.handler} focuspanel={this.state.focus}/>
-
-          <Sidebar src={temp1[0]} band={temp1[1]} focus={this.changefocus}/>
-          
+          <Sidebar src={temp1[0]} band={temp1[1]} focus={this.changefocus}/>          
           <Playbar src={this.state.src}/>
         </div>
         </Router>

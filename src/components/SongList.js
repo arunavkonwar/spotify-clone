@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import '../App.css';
 import Song from './Song';
+import axios from 'axios';
 
 
 class SongList extends Component {
@@ -18,14 +19,15 @@ class SongList extends Component {
   }
 
   componentDidMount(){
-      console.log('HELLO FROM THE COMPONENT DID MOUNT')
-    /*
-      axios.get('https://the-local-weather.firebaseio.com/0/albums/0/songs.json')
+      console.log('HELLO FROM THE COMPONENT DID MOUNT SONG LIST')
+    
+      axios.get('http://localhost:3000/main')
       .then((response) => {
-        console.log(response.data)
-        this.setState({songs:response.data})
-      });
-     */     
+        console.log(response.data[0]["songs"])
+        this.setState({
+          rawData: response.data
+        })
+      });     
   }
 
   render(){
@@ -54,7 +56,7 @@ class SongList extends Component {
     for (var key in songs1) {
       console.log(key, songs1[key])
       elements.push(<Song songName={key} src={songs1[key]['file']} band={songs1[key]['band']} action={this.props.action}/>)
-      }
+    }
 
     return(
         <div className="song-list"> 
