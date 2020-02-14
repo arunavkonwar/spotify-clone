@@ -61,13 +61,7 @@ class Searchpanel extends Component {
         elements: elements,
         elementsRaw: ans
       });
-    });
-
-
-      
-
-
-    
+    });  
   }
 
   render(){
