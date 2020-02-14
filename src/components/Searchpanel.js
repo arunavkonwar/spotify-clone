@@ -12,7 +12,6 @@ class Searchpanel extends Component {
     this.state = {
       src:'test-audio/Munich.mp3',
       elements: null,
-      elementsRaw: null,
       searchterm:'',
     };
 
@@ -27,8 +26,7 @@ class Searchpanel extends Component {
     var searchResults = []
     var ans1 = this.state.elementsRaw
     e.preventDefault();
-    //string.includes(substring)
-    //console.log(ans1)
+
     for (var key in ans1) {
       if (ans1[key]["title"].includes(e.target.value)){
         searchResults.push(<Song songName={ans1[key]["title"]} src={ans1[key]["title"]} band={ans1[key]['title']} action={this.props.action}/>)
@@ -44,24 +42,15 @@ class Searchpanel extends Component {
   componentDidMount(){
 
     var elements=[]
-    var ans={}
-    // run json-server to get DATA from the link below
-    axios.get('http://localhost:3000/songs')
-    .then((response) => {
-      //console.log(response.data)
-      //this.setState({songs:response.data})
-      ans=response.data
 
-      for (var key in ans) {
-        //console.log(key, ans[key])
-        elements.push(<Song songName={ans[key]["title"]} artist={ans[key]["artist"]} album={ans[key]["album"]} action={this.props.action}/>)
-      }
+    for (var key in this.props.rawData) {
+      //console.log(key, ans[key])
+      elements.push(<Song songName={this.props.rawData[key]["title"]} artist={this.props.rawData[key]["artist"]} album={this.props.rawData[key]["album"]} action={this.props.action}/>)
+    }
 
-      this.setState({
-        elements: elements,
-        elementsRaw: ans
-      });
-    });  
+    this.setState({
+      elements: elements
+    });
   }
 
   render(){

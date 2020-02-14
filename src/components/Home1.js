@@ -6,7 +6,6 @@ import Sidebar from './Sidebar'
 import Panel from './Panel'
 import Playbar from './Playbar';
 import axios from 'axios';
-///test-audio/Munich.mp3
 
 class Home1 extends Component {
   constructor(props){
@@ -23,12 +22,13 @@ class Home1 extends Component {
           library: false,
         },
         rawData: null,
+        songPlaying: null
       };
   }
 
 
   logout() {
-      fire.auth().signOut();
+    fire.auth().signOut();
   }
 
   handler = (e) =>{
@@ -44,7 +44,7 @@ class Home1 extends Component {
       songs: true,
       search: false,
       library: false,
-    }
+  }
     
     for (var key in panelmapping){
       if (key===e){
@@ -60,7 +60,7 @@ class Home1 extends Component {
   }
 
   componentDidMount(){
-    console.log("LOLOLDSJKJDBFKSDFJ")
+    console.log("FUCK THIS SHIT")
     axios.get('http://localhost:3000/songs')
     .then((response) => {
       console.log(response.data)
@@ -80,7 +80,7 @@ class Home1 extends Component {
     }
 
 
-    var reverseLookup =(filename)=>{
+    var reverseLookup = (filename )=> {
       var songs1 = {
         "Munich": {
           'file': "munich.mp3",
@@ -113,7 +113,7 @@ class Home1 extends Component {
       return(
         <Router>
         <div className="wrapper">
-          <Panel action={this.handler} focuspanel={this.state.focus}/>
+          <Panel action={this.handler} focuspanel={this.state.focus} rawData={this.state.rawData}/>
           <Sidebar src={temp1[0]} band={temp1[1]} focus={this.changefocus}/>          
           <Playbar src={this.state.src}/>
         </div>

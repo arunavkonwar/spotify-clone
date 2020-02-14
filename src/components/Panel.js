@@ -33,8 +33,8 @@ class Panel extends Component {
       return(
         <div className="main-panel">
         <Navigation/>
-        {this.props.focuspanel.songs && <SongList action={this.props.action}/>}
-        {this.props.focuspanel.search && <Searchpanel/>}
+        {this.props.focuspanel.songs && <SongList action={this.props.action} rawData={this.props.rawData}/>}
+        {this.props.focuspanel.search && <Searchpanel rawData={this.props.rawData}/>}
         {this.props.focuspanel.library && <Library/>}
         </div>
       );
