@@ -25,12 +25,12 @@ class Searchpanel extends Component {
 
   searchLookup = (e) => {
     var searchResults = []
-    var ans1 = this.state.elementsRaw
+    var ans = this.state.elementsRaw
     e.preventDefault();
 
-    for (var key in ans1) {
-      if (ans1[key]["title"].includes(e.target.value)){
-        searchResults.push(<Song title={ans1[key]["title"]} album={ans1[key]["album"]} artist={ans1[key]['artist']} action={this.props.action}/>)
+    for (var key in ans) {
+      if (ans[key]["title"].includes(e.target.value)){
+        searchResults.push(<Song title={ans[key]["title"]} album={ans[key]["album"]} artist={ans[key]['artist']} action={this.props.action}/>)
       } 
     }
 

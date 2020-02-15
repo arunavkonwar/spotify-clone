@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import '../App.css';
 import Song from './Song';
+import Navigation from './Navigation';
 
 class SongList extends Component {
   constructor(props){
@@ -22,9 +23,11 @@ class SongList extends Component {
     }
 
     return(
+      <div><Navigation/>
         <div className="song-list"> 
           {elements}
         </div>
+      </div>
       );
   }
 }
