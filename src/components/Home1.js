@@ -13,16 +13,17 @@ class Home1 extends Component {
       //this.logout=this.logout.bind(this)
       //this.handler=this.handler.bind(this)
       //this.changefocus=this.changefocus.bind(this)
-
+      // test-audio/Munich.mp3
       this.state = {
-        src:'test-audio/Munich.mp3',
+        src:'1',
         focus: {
           songs: true,
           search: false,
           library: false,
         },
         rawData: null,
-        songPlaying: null
+        songPlaying: null,
+        songStorage: 'https://firebasestorage.googleapis.com/v0/b/spotify-clone-a43f4.appspot.com/o'
       };
   }
 
@@ -31,10 +32,11 @@ class Home1 extends Component {
     fire.auth().signOut();
   }
 
-  handler = (e) =>{
+  handler = (e) => {
     console.log(`The ${e} link was clicked.`);
     this.setState({
       src: e, 
+      songPlaying: e
     });
   }
 
@@ -60,7 +62,6 @@ class Home1 extends Component {
   }
 
   componentDidMount(){
-    console.log("FUCK THIS SHIT")
     axios.get('http://localhost:3000/songs')
     .then((response) => {
       console.log(response.data)
@@ -71,51 +72,12 @@ class Home1 extends Component {
   }
 
   render(){
-
-    function handler(e) {
-      e.preventDefault();
-      this.setState({
-        src: this.state.e,
-      });
-    }
-
-
-    var reverseLookup = (filename )=> {
-      var songs1 = {
-        "Munich": {
-          'file': "munich.mp3",
-          'band': "The Fray",
-        },
-        "Rainy Zurich": {
-          'file': "rainyzurich.mp3",
-          'band': "The Fray",
-        },
-        "Take It Easy": {
-          'file': "takeiteasy.mp3",
-          'band': "The Eagles",
-        }
-      };
-
-
-      var finalname = filename.replace(/^.*[\\\/]/, '')
-      var finalname1 = finalname.toLowerCase()
-      for(var key in songs1){
-        if (songs1[key]['file']===finalname1){
-          var ans=[]
-          ans.push(key)
-          ans.push(songs1[key]['band'])
-          return ans;
-        }
-      }
-    }
-
-    var temp1 = reverseLookup(this.state.src)
       return(
         <Router>
         <div className="wrapper">
           <Panel action={this.handler} focuspanel={this.state.focus} rawData={this.state.rawData}/>
-          <Sidebar src={temp1[0]} band={temp1[1]} focus={this.changefocus}/>          
-          <Playbar src={this.state.src}/>
+          <Sidebar focus={this.changefocus} rawData={this.state.rawData} songPlaying={this.state.songPlaying}/>          
+          <Playbar src={this.state.songPlaying} storage={this.state.songStorage}/>
         </div>
         </Router>
       )

@@ -15,11 +15,12 @@ class Song extends Component {
       https://www.techiediaries.com/access-update-parent-state-child-component-react/ 
   */
   //<Audioplayer src={"/test-audio/" + this.props.src} /> 
+  // <a onClick={() => this.props.action(`/test-audio/${this.props.id}`)}>{this.props.title}</a><br></br>
   render(){
 
       return(
         <div className="one-song">
-        <a onClick={() => this.props.action(`/test-audio/${this.props.artist}`)}>{this.props.title}</a><br></br>
+        <a onClick={() => this.props.action(this.props.id)}>{this.props.title}</a><br></br>
         <h6><a>{this.props.artist}</a>   |   <a>{this.props.album}</a></h6> 
         </div>
       );

@@ -19,7 +19,7 @@ class SongList extends Component {
 
     for (var key in this.props.rawData) {
       console.log(key, this.props.rawData[key])
-      elements.push(<Song title={this.props.rawData[key]['title']} album={this.props.rawData[key]['album']} artist={this.props.rawData[key]['artist']} action={this.props.action}/>)
+      elements.push(<Song title={this.props.rawData[key]['title']} album={this.props.rawData[key]['album']} artist={this.props.rawData[key]['artist']} action={this.props.action} id={this.props.rawData[key]['id']}/>)
     }
 
     return(

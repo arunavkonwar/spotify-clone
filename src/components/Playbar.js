@@ -9,7 +9,7 @@ class Playbar extends Component {
       return(
         <div>
           <div className="playbar">
-              <Audioplayer src={this.props.src}/>
+              <Audioplayer src={this.props.src} storage={this.props.storage}/>
           </div>
         </div>
       );
