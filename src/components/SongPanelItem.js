@@ -21,7 +21,7 @@ class SongPanelItem extends Component {
       return(
         <div>
           <a onClick={() => this.props.action(this.props.id)}>
-          <div className="song-panel-item-main">
+          <div className="song-panel-item-top">
             <img src={this.props.albumCover}/>
             {console.log(this.props.albumCover)}
           <h6>{this.props.title}</h6>

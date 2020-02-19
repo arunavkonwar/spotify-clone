@@ -209,21 +209,32 @@ li a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.songPanelFlex:hover > div:hover {
+  background-color: rgb(65, 63, 63);
+  color: white;
+  margin: 18px;
+  text-align: center;
+  line-height: 50px;
+  z-index: 5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-shadow5 */
-.song-panel-item-main {
-  background-color: #2C2C2C;
+.song-panel-item-top {
   color: white;
   padding: 5px;
   font-size: 100px;
 }
 
-.song-panel-item-main img {
+
+.song-panel-item-top img {
   width: 150px;
 }
 
 .song-panel-item-bottom {
   padding: 5px;
 }
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .song-list::-webkit-scrollbar {
