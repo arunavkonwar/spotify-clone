@@ -113,7 +113,8 @@ li a:hover {
   padding: 0px 10px;
 }
 
-@media screen and (max-width: 700px) {
+
+/* @media screen and (max-width: 700px) {
   .sidenav {
     width: 100%;
     height: auto;
@@ -133,7 +134,7 @@ li a:hover {
     text-align: center;
     float: none;
   }
-}
+} */
 
 /* sidebar CSS ends here*/
 
@@ -150,7 +151,9 @@ li a:hover {
 
 .wrapper {
   overflow: auto;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  flex-wrap: nowrap;
 }
 .nav-main {
   float: right;
@@ -232,7 +235,8 @@ li a:hover {
 }
 
 .song-panel-item-bottom {
-  padding: 5px;
+  color: rgb(163, 163, 163);
+  padding: none;
 }
 
 
@@ -281,6 +285,11 @@ li a:hover {
 .songNameTitle {
   color: rgb(223, 203, 203);
   animation: right_to_left 3s ease;
+}
+
+.songNameTitle img {
+width: 50%;
+padding: 10px;
 }
 
 @keyframes right_to_left {

@@ -28,7 +28,7 @@ class SongPanelItem extends Component {
           </div>
           </a>
           <div className="song-panel-item-bottom">
-          <a><h6>{this.props.artist}</h6></a> 
+          <h6>{this.props.artist}</h6> 
           </div>
         </div>
       );

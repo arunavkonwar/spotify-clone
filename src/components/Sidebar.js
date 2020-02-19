@@ -21,7 +21,7 @@ class Sidebar extends Component {
           <div className="siteLogo">
             <img src="images/spotify-logo.png" width="60%" align="center"></img>
           </div>
-          <br></br><br></br>
+          <br></br>
           <Sidebutton linkname="Home" mapname="songs" focus={this.props.focus}/>
           <Sidebutton linkname="Search" mapname="search" focus={this.props.focus}/>
           <Sidebutton linkname="Your Library" mapname="library" focus={this.props.focus}/>
