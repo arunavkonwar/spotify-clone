@@ -64,7 +64,7 @@ class Home1 extends Component {
   componentDidMount(){
     axios.get('http://localhost:3000/songs')
     .then((response) => {
-      console.log(response.data)
+      //console.log(response.data)
       this.setState({
         rawData: response.data
       })

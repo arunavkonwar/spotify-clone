@@ -17,8 +17,8 @@ class SongPanel extends Component {
     var elements=[]
 
     for (var key in this.props.rawData) {
-      console.log(key, this.props.rawData[key])
-      elements.push(<div><SongPanelItem title={this.props.rawData[key]['title']} album={this.props.rawData[key]['album']} artist={this.props.rawData[key]['artist']} action={this.props.action} id={this.props.rawData[key]['id']}/></div>)
+      //console.log(key, this.props.rawData[key])
+      elements.push(<div><SongPanelItem title={this.props.rawData[key]['title']} album={this.props.rawData[key]['album']} artist={this.props.rawData[key]['artist']} albumCover={this.props.rawData[key]['albumCover']} action={this.props.action} id={this.props.rawData[key]['id']}/></div>)
     }
 
     return(

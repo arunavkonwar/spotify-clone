@@ -22,12 +22,13 @@ class SongPanelItem extends Component {
         <div>
           <a onClick={() => this.props.action(this.props.id)}>
           <div className="song-panel-item-main">
-          <img src="images/spotify-logo.png"/>
+            <img src={this.props.albumCover}/>
+            {console.log(this.props.albumCover)}
           <h6>{this.props.title}</h6>
           </div>
           </a>
           <div className="song-panel-item-bottom">
-          <h6><a>{this.props.artist}</a></h6> 
+          <a><h6>{this.props.artist}</h6></a> 
           </div>
         </div>
       );

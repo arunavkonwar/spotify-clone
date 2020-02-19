@@ -200,9 +200,8 @@ li a:hover {
 }
 
 .songPanelFlex > div {
-  background-color: #f1f1f1;
-  width: 150px;
-  height: 170px;
+  background-color: #2C2C2C;
+  color: white;
   margin: 18px;
   text-align: center;
   line-height: 50px;
@@ -212,14 +211,14 @@ li a:hover {
 
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-shadow5 */
 .song-panel-item-main {
-  background-color: #4CAF50;
+  background-color: #2C2C2C;
   color: white;
-  padding: 10px;
+  padding: 5px;
   font-size: 100px;
 }
 
 .song-panel-item-main img {
-  width: 100%;
+  width: 150px;
 }
 
 .song-panel-item-bottom {
