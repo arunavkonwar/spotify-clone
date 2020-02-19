@@ -285,6 +285,7 @@ li a:hover {
 .songNameTitle {
   color: rgb(223, 203, 203);
   animation: right_to_left 3s ease;
+  bottom: 0;
 }
 
 .songNameTitle img {
