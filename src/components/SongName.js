@@ -33,8 +33,7 @@ class SongName extends Component {
         <div>
           <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
               <br></br>
-        <div className="songNameHeading">Now Playing
-        </div>
+        {this.reverseTitleLookup(this.props.songPlaying)?<div className="songNameHeading">Now Playing</div>:null}
         <div className="songNameTitle">
             {this.reverseTitleLookup(this.props.songPlaying)} <br></br>
             <h6>{this.reverseArtistLookup(this.props.songPlaying)}</h6>
