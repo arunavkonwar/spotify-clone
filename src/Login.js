@@ -1,9 +1,7 @@
 import React, { Component} from 'react';
-import './App.css';
+import './Login.css';
 import fire from './config/fire';
 import firebase from 'firebase';
-import { authEndpoint, clientId, redirectUri, scopes } from "./config/config";
-import hash from "./hash";
 
 class Login extends Component {
     constructor(props){
@@ -12,19 +10,10 @@ class Login extends Component {
         this.signup = this.signup.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.googleOAuth = this.googleOAuth.bind(this);
-        //this.spotifyOAuth = this.spotifyOAuth.bind(this)
+
         this.state = {
-            token: null,
-            item: {
-              album: {
-                images: [{ url: "" }]
-              },
-              name: "",
-              artists: [{ name: "" }],
-              duration_ms:0,
-            },
-            is_playing: "Paused",
-            progress_ms: 0
+            email: 'lol',
+            password: null
           };
     }
 
@@ -76,27 +65,14 @@ class Login extends Component {
     render(){
         return(  
             <div>
-                <h1>Hello from the Login page</h1>
-                <h5>login using:arunavkonwar@gmail.com/</h5>
-                <form>
-                <div>
-                <input type="email" value={this.state.email} class="form-control" name="email" placeholder="Enter email" onChange={this.handleChange}></input><br></br>
+                <div id="header">
+                <div class="logo">
+                </div>
+                {/* <input type="email" value={this.state.email} class="form-control" name="email" placeholder="Enter email" onChange={this.handleChange}></input><br></br>
                 <input type="password" value={this.state.password} class="form-control" name="password" placeholder="Enter password" onChange={this.handleChange}></input><br></br>
-                <button type="submit" class="btn btn-default" onClick={this.login}>Login</button>
-                <button type="submit" class="btn btn-default" onClick={this.googleOAuth}>Sign-in with Google</button>
-
-                {!this.state.token && (
-                <a
-                className="btn btn--loginApp-link"
-                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-                    "%20"
-                )}&response_type=token&show_dialog=true`}
-                >
-                Login to Spotify
-                </a>
-                )}
-                </div> 
-                </form>
+                <button type="submit" class="btn btn-default" onClick={this.login}>Login</button> */}
+                <button type="submit" class="btn sign-in" onClick={this.googleOAuth}>Sign-in with Google</button>
+                </div>
             </div>
         );
     }

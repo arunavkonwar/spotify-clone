@@ -3,9 +3,6 @@ import './App.css';
 import fire from './config/fire';
 import Login from './Login'
 import Home1 from './components/Home1'
-import hash from "./hash";
-import * as $ from "jquery";
-import Player from "./components/Player";
 
 
 class App extends Component {
