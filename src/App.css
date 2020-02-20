@@ -274,6 +274,7 @@ li a:hover {
   bottom: 0;
   height: 14%;
   width: 100%;
+  z-index: 10;
 }
 
 .songNameHeading {
@@ -315,9 +316,22 @@ padding: 10px;
 .warning {background-color: #ff9800;} /* Orange */
 .warning:hover {color: white; background: #ff0000;}
 
-.playbar-songName {
-  float: left;
+/* .playbar > div {
+  display: flex;
+  align-content: center;
+} */
+
+/* .playbar-songName {
+  
   color: white;
   padding: 30px;
   z-index: 1000000;
-}
+} */
+
+/* .playbar > div {
+  float: left;
+} */
+/* 
+.audio-player-center {
+  right: 50%;
+} */
