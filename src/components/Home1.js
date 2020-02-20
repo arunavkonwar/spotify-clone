@@ -6,6 +6,7 @@ import Sidebar from './Sidebar'
 import Panel from './Panel'
 import Playbar from './Playbar';
 import axios from 'axios';
+import Navigation from './Navigation';
 
 class Home1 extends Component {
   constructor(props){
@@ -75,9 +76,10 @@ class Home1 extends Component {
       return(
         <Router>
         <div className="wrapper">
+          
           <Panel action={this.handler} focuspanel={this.state.focus} rawData={this.state.rawData}/>
           <Sidebar focus={this.changefocus} rawData={this.state.rawData} songPlaying={this.state.songPlaying}/>          
-          <Playbar src={this.state.songPlaying} storage={this.state.songStorage}/>
+          <Playbar src={this.state.songPlaying} storage={this.state.songStorage} rawData={this.state.rawData} songPlaying={this.state.songPlaying}/>
         </div>
         </Router>
       )
