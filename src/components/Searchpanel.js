@@ -22,6 +22,8 @@ class Searchpanel extends Component {
     }
   }
 
+  // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
   shuffle = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
