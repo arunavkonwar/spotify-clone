@@ -22,14 +22,34 @@ class Searchpanel extends Component {
     }
   }
 
+  shuffle = (array) => {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
   searchLookup = (e) => {
+    e.preventDefault();
     var searchResults = []
     var ans = this.state.elementsRaw
-    e.preventDefault();
+    
 
     for (var key in ans) {
       if (ans[key]["title"].includes(e.target.value)){
-        searchResults.push(<Song title={ans[key]["title"]} album={ans[key]["album"]} artist={ans[key]['artist']} action={this.props.action} albumCover={this.props.albumCover}/>)
+        searchResults.push(<Song title={ans[key]["title"]} album={ans[key]["album"]} artist={ans[key]['artist']} action={this.props.action} albumCover={ans[key]['albumCover']}/>)
       } 
     }
 
@@ -45,6 +65,7 @@ class Searchpanel extends Component {
 
     for (var key in this.props.rawData) {
       elements.push(<Song title={this.props.rawData[key]["title"]} artist={this.props.rawData[key]["artist"]} album={this.props.rawData[key]["album"]} action={this.props.action} albumCover={this.props.rawData[key]['albumCover']}/>)
+      this.shuffle(elements)
     }
 
     this.setState({

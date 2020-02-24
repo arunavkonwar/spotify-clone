@@ -174,7 +174,7 @@ li a:hover {
 }
 
 .filter-bar {
-  z-index: 2;
+  z-index: 10;
   top: 10%;
   right: 0;
   padding-top: 10px;
@@ -184,6 +184,7 @@ li a:hover {
 }
 
 .song-list {
+  z-index: 10;
   height: 66%;
   width: 60%;
   position: fixed;
