@@ -20,6 +20,10 @@ class Song extends Component {
 
       return(
         <div className="one-song">
+        <div>
+        <img src={this.props.albumCover} width="50px"/>
+        </div>
+        
         <a onClick={() => this.props.action(this.props.id)}>{this.props.title}</a><br></br>
         <h6><a>{this.props.artist}</a>   |   <a>{this.props.album}</a></h6> 
         </div>
