@@ -1,12 +1,11 @@
-import React, { Component} from 'react';
-import './App.css';
-import fire from './config/fire';
-import Login from './Login'
-import Home1 from './components/Home1'
-
+import React, { Component } from "react";
+import "./App.css";
+import fire from "./config/fire";
+import Login from "./Login";
+import Home1 from "./components/Home1";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -14,27 +13,22 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.authListener();
   }
 
-  authListener(){
-    fire.auth().onAuthStateChanged((user)=>{
-      if(user){
-        this.setState({user});
-      }
-      else{
-        this.setState({user: null})
+  authListener() {
+    fire.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
       }
     });
   }
 
-  render(){
-    return(
-      <div className="App">
-        {this.state.user ? (<Login/>):(<Home1/>)}        
-      </div>
-    );
+  render() {
+    return <div className="App">{this.state.user ? <Login /> : <Home1 />}</div>;
   }
 }
 
